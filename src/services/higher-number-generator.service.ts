@@ -1,10 +1,10 @@
-let initialNumber = 0;
+let initialNumber = 100;
 
-export const generateNewNumber = () : Promise<number> => {
+export const generateHigherNewNumber = () : Promise<number> => {
   return new Promise<number>((resolve) => {
     setTimeout(() => {
       initialNumber += 1;
       resolve(initialNumber)
-    }, 1501)
+    }, 150)
   });
 }
