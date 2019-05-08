@@ -22,7 +22,7 @@ const currencies = [
 const currenciesDb = new Datastore({inMemoryOnly: true});
 currenciesDb.insert(currencies);
 
-const each5Second = 5000;
+const each5Second = 1000;
 const getRandomCurrencyId = (currenciesList) => ({_id: currenciesList[_.random(0, currenciesList.length -1)]._id});
 
 function getRandomInt(lower, upper)

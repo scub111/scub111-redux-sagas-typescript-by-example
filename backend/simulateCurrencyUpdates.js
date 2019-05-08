@@ -1,7 +1,7 @@
 var currencyDb = require('./currencyDb');
 var _ = require('lodash');
 
-const eachXSeconds = 5000;
+const eachXSeconds = 1000;
 const getRandomCurrency = (currencyList) => (currencyList[_.random(0, currencyList.length -1)]);
 
 function getRandomNumber(lower, upper) {
