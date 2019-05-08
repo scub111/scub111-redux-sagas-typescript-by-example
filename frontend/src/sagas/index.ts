@@ -2,6 +2,7 @@ import { call, put, takeEvery, all, fork, takeLatest, throttle, race, take } fro
 import { generateNewNumber, generateHigherNewNumber } from '../services';
 import { numberRequestCompletedAction } from '../actions'
 import { actionIds } from '../common'
+import { socketRootSaga } from './socket'
 
 function* watchNewGeneratedNumberRequestStart() {
     yield takeEvery(actionIds.GET_NUMBER_REQUEST_START, requestNewGeneratedNumber);
@@ -44,5 +45,6 @@ function* requestNewGeneratedNumber() {
 export const rootSaga = function* root() {
     yield all([
         fork(watchNewGeneratedNumberRequestStart),
+        fork(socketRootSaga),
     ])
 }

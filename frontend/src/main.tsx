@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { MyNumberBrowserContainer, MyNumberSetterContainer } from './components';
+import { MyNumberBrowserContainer, MyNumberSetterContainer, CurrencyTableContainer } from './components';
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga'; import { Provider } from 'react-redux';
 import { reducers } from './reducers';
@@ -20,6 +20,8 @@ sagaMiddleware.run(rootSaga);
 ReactDOM.render(
   <Provider store={store}>
     <>
+      <CurrencyTableContainer />
+      <br />
       <MyNumberSetterContainer />
       <MyNumberBrowserContainer />
     </>
